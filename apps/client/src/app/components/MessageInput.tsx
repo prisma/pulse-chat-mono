@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const MessageInput = () => {
     const [message, setMessage] = useState('')
+
     const sendMessage = async (e: any) => {
         e.preventDefault();
         const newMessage = message;
@@ -15,6 +16,7 @@ const MessageInput = () => {
             body: JSON.stringify({message: newMessage})
         })
     }
+    
     return <form id="text-input-container" className="bg-gray-300 py-4 px-2 w-full flex items-center justify-center" onSubmit={sendMessage}>
         <div className="text-center bg-white w-full md:w-1/3 px-3 py-2 flex gap-3 rounded-xl drop-shadow-2xl">
             <input

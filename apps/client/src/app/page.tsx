@@ -1,31 +1,13 @@
 "use client";
 
 import MessageInput from "./components/MessageInput"
-import io, { Socket } from 'Socket.IO-client'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 import ChatMessage from "./components/ChatMessage";
+import useChat from './hooks/useChat';
 
 export default function Home() {
-  const [_, setSocket] = useState<Socket>()
   const messagesEndRef = useRef<HTMLInputElement>(null)
-  const [messages, setMessages] = useState<{
-    message: string;
-    user: string;
-  }[]>([])
-
-  useEffect(() => {
-    const socket = io('http://localhost:3001')
-    setSocket(socket)
-    socket.on('init-chat', (data) => {
-      setMessages(data.reverse())
-    })
-    socket.on('chat', (data) => {
-      setMessages((messages) => [...messages, data])
-    })
-    return () => {
-      socket.close()
-    }
-  }, [setSocket])
+  const messages = useChat()
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -33,6 +15,7 @@ export default function Home() {
 
   return (
    <div className="w-full h-full flex flex-col">
+    { messages.length }
     <div className="flex-1 overflow-scroll flex flex-col items-end gap-y-2 px-12 py-4 w-1/2 mx-auto">
        {
           messages.map((message, index) => 

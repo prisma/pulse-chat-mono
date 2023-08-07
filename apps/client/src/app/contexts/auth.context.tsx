@@ -14,6 +14,7 @@ const AuthProvider: React.FC<any> = ({ children }) => {
         } 
     }, [session, status])
 
+    // Don't render a page unless we're sure there is a session
     return <AuthContext.Provider value={null}>
         {(status == 'authenticated') ? children  : null}
     </AuthContext.Provider>
