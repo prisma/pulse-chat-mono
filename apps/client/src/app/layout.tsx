@@ -20,11 +20,11 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${inter.className} h-screen w-full bg-gray-100 flex flex-col`}>
+      <body className={`${inter.className} h-screen overflow-hidden w-full bg-gray-100 flex flex-col`}>
         <NextAuthProvider>
           <AuthProvider>
             <Header/>
-            <main className="flex flex-1">
+            <main className="flex flex-1 overflow-scroll">
               {children}
             </main>
           </AuthProvider>

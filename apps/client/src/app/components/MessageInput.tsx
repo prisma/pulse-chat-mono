@@ -15,8 +15,8 @@ const MessageInput = () => {
             body: JSON.stringify({message: newMessage})
         })
     }
-    return <form id="text-input-container" className="pt-6 pb-12 w-full flex items-center justify-center" onSubmit={sendMessage}>
-        <div className="text-center bg-white w-1/3 px-3 py-2 flex gap-3 rounded-xl drop-shadow-2xl">
+    return <form id="text-input-container" className="bg-gray-300 py-4 px-2 w-full flex items-center justify-center" onSubmit={sendMessage}>
+        <div className="text-center bg-white w-full md:w-1/3 px-3 py-2 flex gap-3 rounded-xl drop-shadow-2xl">
             <input
                 name="message"
                 value={message}

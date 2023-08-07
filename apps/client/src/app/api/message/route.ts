@@ -1,4 +1,4 @@
-import { prismaTest } from '@pulsechat/db'
+import prisma from '@pulsechat/db'
 import { authOptions } from '../auth/[...nextauth]/route'
 import { getServerSession } from 'next-auth'
 import { NextResponse } from 'next/server'
@@ -11,7 +11,7 @@ export async function POST(request: Request) {
             message: 'unauthorized'
         }, { status: 401 })
     
-       await prismaTest.chat.create({
+       await prisma.chat.create({
             data: {
                 message: body.message,
                 user: {
