@@ -10,9 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "@pulsechat/db": "workspace:*",
+    "@types/cors": "^2.8.13",
     "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.1",
+    "socket.io": "^4.7.2",
     "zod": "^3.21.4"
   },
   "devDependencies": {
