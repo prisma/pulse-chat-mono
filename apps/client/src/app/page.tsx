@@ -15,7 +15,6 @@ export default function Home() {
 
   return (
    <div className="w-full h-full flex flex-col">
-    { messages.length }
     <div className="flex-1 overflow-scroll flex flex-col items-end gap-y-2 px-12 py-4 w-1/2 mx-auto">
        {
           messages.map((message, index) => 
