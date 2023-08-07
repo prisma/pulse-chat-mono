@@ -4,7 +4,7 @@ import { getChatHistory, subscribeToChat } from './data'
 
 async function main() {
     const io = configureSocketServer(server)
-    server.listen(3001, () => {
+    server.listen(process.env.PORT, () => {
         console.log('Server listening on port 3001')
     })
 
