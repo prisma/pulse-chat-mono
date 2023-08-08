@@ -68,6 +68,9 @@ importers:
         specifier: 5.1.6
         version: 5.1.6
     devDependencies:
+      '@prisma/nextjs-monorepo-workaround-plugin':
+        specifier: ^5.1.1
+        version: 5.1.1
       '@types/js-cookie':
         specifier: ^3.0.3
         version: 3.0.3
@@ -457,6 +460,10 @@ packages:
       - bufferutil
       - utf-8-validate
     dev: false
+
+  /@prisma/nextjs-monorepo-workaround-plugin@5.1.1:
+    resolution: {integrity: sha512-LQJGZJzy/ZV5g4YdH3HQ0hJiY0AFSskvnGvwu/3b3qzsu5A96RdbIrgUXf9BqkcP9zM1Gvwac00KF0Rg1hLssQ==}
+    dev: true
 
   /@rushstack/eslint-patch@1.3.2:
     resolution: {integrity: sha512-V+MvGwaHH03hYhY+k6Ef/xKd6RYlc4q8WBx+2ANmipHJcKuktNcI/NgEsJgdSUF6Lw32njT6OnrRsKYCdgHjYw==}
