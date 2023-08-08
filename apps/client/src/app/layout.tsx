@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Pulse Chat',
-  description: 'Real-time chat powered by Prisma\'s Pulse',
+  description: 'Realtime chat powered by Prisma\'s Pulse',
 }
 
 export default async function RootLayout({
