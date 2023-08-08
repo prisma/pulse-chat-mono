@@ -8,7 +8,7 @@ import Header from './components/Header'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Pulse Chat',
+  title: 'Pulse chat',
   description: 'Realtime chat powered by Prisma\'s Pulse',
 }
 
