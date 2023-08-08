@@ -5,7 +5,7 @@ import { JWT } from 'next-auth/jwt';
 import GitHubProvider from "next-auth/providers/github";
 
 export const authOptions = {
-    adapter: PrismaAdapter(prisma as PrismaClient),
+    adapter: PrismaAdapter(prisma as unknown as PrismaClient),
     providers: [
         GitHubProvider({
             clientId: process.env.GITHUB_ID || '',
