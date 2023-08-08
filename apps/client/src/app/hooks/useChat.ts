@@ -8,8 +8,8 @@ const useChat = () => {
       user: string;
     }[]>([])
     useEffect(() => {
-        if ( !process.env.SERVER_URL ) throw new Error('SERVER_URL is not defined')
-        const socket = io(process.env.SERVER_URL)
+        if ( !process.env.NEXT_PUBLIC_SERVER_URL ) throw new Error('NEXT_PUBLIC_SERVER_URL is not defined')
+        const socket = io(process.env.NEXT_PUBLIC_SERVER_URL)
         setSocket(socket)
         socket.on('init-chat', (data) => {
           setMessages(data.reverse())
