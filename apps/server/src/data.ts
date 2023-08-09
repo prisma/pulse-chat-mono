@@ -18,14 +18,6 @@ export const getChatHistory = async () => {
     })
 }
 
-// export const subscribeToChat = async () => {
-//     const subscription = await prisma.chat.subscribe({ create: {} });
-//     if (subscription instanceof Error) {
-//         throw subscription;
-//     }
-//     return subscription
-// }
-
 export const subscribeToChat = async (io: Server) => {
     const subscription = await prisma.chat.subscribe({ create: {} });
     if (subscription instanceof Error) {
@@ -35,10 +27,13 @@ export const subscribeToChat = async (io: Server) => {
     // Handle Prisma subscription events
     for await (const event of subscription) {
         const user = await getUserById(event.after.userId)
-        io.sockets.emit('chat', {
-            message: event.after.message,
-            user: user.name
-        })
+
+        if ( user ) {
+            io.sockets.emit('chat', {
+                message: event.after.message,
+                user: user.name
+            })
+        }
     }
 
 }

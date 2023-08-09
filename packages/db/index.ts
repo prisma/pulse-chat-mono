@@ -6,5 +6,4 @@ const prisma = new PrismaClient().$extends(withPulse({
 }))
 
 export default prisma;
-export const prismaTest = new PrismaClient()
 export * from '@prisma/client';
